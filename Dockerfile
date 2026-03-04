@@ -11,11 +11,5 @@ RUN npm ci
 # Copy source
 COPY . .
 
-# React dev server runs on 3000 inside container
-EXPOSE 3000
-
-# Make dev server reachable from outside container
-ENV HOST=0.0.0.0
-
 # Start dev server
 CMD ["npm", "run","dev"]
