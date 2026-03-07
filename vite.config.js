@@ -6,6 +6,6 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 5173,
-    allowedHosts: ["unclepowercompressor.infinitecoretechcloud.com"],
+    allowedHosts: ["unclepowercompressor.infinitecoretechcloud.com","infinitecoretechcloud.com"],
   },
 });
