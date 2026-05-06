@@ -1,15 +1,9 @@
-# Use a small Node image
 FROM node:20-alpine
-
-# App directory
 WORKDIR /app
-
-# Install deps first (better caching)
 COPY package*.json ./
 RUN npm ci
-
-# Copy source
 COPY . .
-
-# Start dev server
-CMD ["npm", "run","dev"]
+RUN npm run build
+RUN npm install -g serve
+EXPOSE 3000
+CMD ["serve", "-s", "dist", "-l", "5173"]
